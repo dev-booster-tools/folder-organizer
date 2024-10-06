@@ -1,0 +1,48 @@
+types:
+  image:
+    target_folder: image-files
+    extensions:
+      - .png
+      - .jpg
+      - .jpeg
+      - .gif
+      - .bmp
+      - .tiff
+      - .webp
+      - .svg
+      - .eps
+      - .raw
+      - .cr2
+      - .nef
+  video:
+    target_folder: video-files
+    extensions:
+      - .mp4
+      - .avi
+      - .mkv
+      - .mov
+      - .webm
+      - .ogv
+      - .flv
+      - .wmv
+      - .mpg
+      - .mpeg
+      - .3gp
+      - .mts
+      - .m2ts
+  excel:
+    target_folder: excel-files
+    extensions:
+      - .xlsx
+      - .xlsm
+      - .xltx
+      - .xltm
+      - .xls
+      - .xlt
+      - .xlsb
+      - .csv
+      - .tsv
+      - .xml
+      - .ods
+      - .xlam
+      - .xla

@@ -1,4 +1,6 @@
 import os
+import hydra
+
 from pathlib import Path
 from typing import Generator, Optional
 from folder_organazer.file_entity import FileDescription
@@ -28,13 +30,19 @@ def get_files(path: Path) -> Generator[FileDescription, None, None]:
     except (PermissionError, FileNotFoundError) as e:
         print(f"Error accessing {path}: {e}")
 
-
-def main() -> None:
+@hydra.main(config_path='conf', config_name='config', version_base="1.3")
+def main(cfg) -> None:
     """Main function to print all files from the Desktop."""
+    sdf: dict = cfg.types
+    for name, content in sdf.items():
+        target_folder = content.target_folder
+        extensions = content.extensions
+        print(extensions)
+    return
+
     desktop_files = list(get_files(desktop_path()))
     for file in desktop_files:
         print(file)
-
 
 if __name__ == "__main__":
     main()
